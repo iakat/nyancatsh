@@ -22,7 +22,7 @@ func main() {
 	flag.Parse()
 	s, err := wish.NewServer(
 		wish.WithAddress(fmt.Sprintf("[::]:%d", *port)),
-		wish.WithHostKeyPath(".ssh/nyancatsh"),
+		wish.WithHostKeyPath("/ssh/nyancatsh"),
 		wish.WithMiddleware(
 			bm.Middleware(teaHandler),
 			lm.Middleware(),
