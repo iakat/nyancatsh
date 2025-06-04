@@ -21,7 +21,7 @@ var port = flag.Int("port", 2226, "port to listen on")
 func main() {
 	flag.Parse()
 	s, err := wish.NewServer(
-		wish.WithAddress(fmt.Sprintf("0.0.0.0:%d", *port)),
+		wish.WithAddress(fmt.Sprintf("[::]:%d", *port)),
 		wish.WithHostKeyPath(".ssh/nyancatsh"),
 		wish.WithMiddleware(
 			bm.Middleware(teaHandler),
@@ -31,7 +31,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	log.Printf("Starting SSH server on 0.0.0.0:%d", *port)
+	log.Printf("Starting SSH server on [::]:%d", *port)
 
 	done := make(chan os.Signal, 1)
 	signal.Notify(done, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)

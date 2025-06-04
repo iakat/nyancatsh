@@ -1,7 +1,8 @@
-module github.com/aymanbagabas/nyancatsh
+module github.com/iakat/nyancatsh
 
-go 1.17
-toolchain go1.24.1
+go 1.23.0
+
+toolchain go1.24.3
 
 require (
 	github.com/charmbracelet/lipgloss v1.1.0
@@ -10,6 +11,7 @@ require (
 )
 
 require (
+	github.com/aymanbagabas/nyancatsh v1.0.1
 	github.com/charmbracelet/bubbletea v1.3.4
 	github.com/charmbracelet/ssh v0.0.0-20250128164007-98fd5ae11894
 )
